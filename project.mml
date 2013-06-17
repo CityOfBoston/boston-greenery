@@ -40,41 +40,20 @@
     {
       "geometry": "polygon",
       "extent": [
-        -71.0741234,
-        42.3511233,
-        -71.0598269,
-        42.35871000000001
-      ],
-      "id": "bostoncommon",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/ndoiron404/Downloads/bostoncommon.kml"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "bostoncommon"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
         -71.8609991,
         41.9510002,
         -70.5283185,
         42.7019997
       ],
-      "id": "boston-poly",
+      "id": "boston-parks",
       "class": "",
       "Datasource": {
-        "file": "/Users/ndoiron404/Downloads/boston.osm2pgsql-shapefiles/boston.osm-polygon.shp",
-        "id": "boston-poly",
-        "project": "BostonGreenery",
-        "srs": ""
+        "file": "/Users/ndoiron404/Downloads/boston.osm2pgsql-shapefiles/boston.osm-polygon.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "boston-poly"
+      "name": "boston-parks"
     },
     {
       "geometry": "polygon",
@@ -87,12 +66,33 @@
       "id": "massachusettswater",
       "class": "",
       "Datasource": {
-        "file": "/Users/ndoiron404/Downloads/massachusetts.shapefiles/massachusetts_water.shp"
+        "file": "/Users/ndoiron404/Downloads/massachusetts.shapefiles/massachusetts_water.shp",
+        "id": "massachusettswater",
+        "project": "BostonGreenery",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
       "name": "massachusettswater"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -71.0852555,
+        42.3533951,
+        -71.073914,
+        42.3598889
+      ],
+      "id": "bostonoffshore",
+      "class": "",
+      "Datasource": {
+        "file": "bostonoffshore.kml"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bostonoffshore"
     },
     {
       "geometry": "linestring",
@@ -111,6 +111,24 @@
       "srs": "",
       "advanced": {},
       "name": "boston-line"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -71.8609991,
+        41.9510002,
+        -70.5283185,
+        42.7019997
+      ],
+      "id": "boston-buildings",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ndoiron404/Downloads/boston.osm2pgsql-shapefiles/boston.osm-polygon.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "boston-buildings"
     }
   ],
   "scale": 1,

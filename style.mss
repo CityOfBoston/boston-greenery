@@ -11,9 +11,8 @@ Map {
   polygon-pattern-file: url('water.jpg');
 }
 
-
 /* land */
-#boston {
+#boston, #massachusettswater[NATURAL = "shoreline"] {
   line-color:#b8dee6;
   line-width:0.5;
   polygon-opacity:1;
@@ -21,7 +20,7 @@ Map {
 }
 
 /* buildings */
-#bostoncommon, #boston-poly[ building != "" ] {
+#bostoncommon, #boston-buildings[ building != "" ] {
   line-color:#594;
   line-width:0.5;
   polygon-opacity:1;
@@ -31,7 +30,7 @@ Map {
 }
 
 
-#boston-poly [ leisure = "park" ], #boston-poly [ leisure = "recreation_ground" ] {
+#boston-parks [ leisure = "park" ], #boston-parks [ leisure = "recreation_ground" ], #bostonoffshore {
   line-color:#594;
   line-width:0.5;
   polygon-opacity:1;

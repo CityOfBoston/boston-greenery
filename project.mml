@@ -1,0 +1,121 @@
+{
+  "bounds": [
+    -71.0842,
+    42.3473,
+    -71.0454,
+    42.3701
+  ],
+  "center": [
+    -71.0676,
+    42.3542,
+    14
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 13,
+  "maxzoom": 18,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        -72.00134444456438,
+        41.65482953808709,
+        -70.48920300000005,
+        42.987635281223426
+      ],
+      "id": "boston",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ndoiron404/Downloads/boston.coastline/boston.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "boston"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -71.0741234,
+        42.3511233,
+        -71.0598269,
+        42.35871000000001
+      ],
+      "id": "bostoncommon",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ndoiron404/Downloads/bostoncommon.kml"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "bostoncommon"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.5630441,
+        41.238728,
+        -69.9303583,
+        42.983393
+      ],
+      "id": "massachusettswater",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ndoiron404/Downloads/massachusetts.shapefiles/massachusetts_water.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "massachusettswater"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -71.8609991,
+        41.9510002,
+        -70.5283185,
+        42.7019997
+      ],
+      "id": "boston-poly",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ndoiron404/Downloads/boston.osm2pgsql-shapefiles/boston.osm-polygon.shp",
+        "id": "boston-poly",
+        "project": "BostonGreenery",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "boston-poly"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -71.861,
+        41.951,
+        -70.2851959,
+        42.702
+      ],
+      "id": "boston-line",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ndoiron404/Downloads/boston.osm2pgsql-shapefiles/boston.osm-line.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "boston-line"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "BostonGreenery",
+  "description": "Green space in Boston",
+  "attribution": "ODBL OpenStreetMap.org, City of Boston"
+}

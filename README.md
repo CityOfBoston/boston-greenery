@@ -2,7 +2,7 @@
 
 Boston Greenery is a map style for TileMill / MapBox which 
 
-<img src="https://github.com/mapmeld/boston-greenery/blob/tilemill/boston-greenery.png"/>
+<img src="https://raw.github.com/mapmeld/boston-greenery/tilemill/boston-greenery.png"/>
 
 ## MSS and TileMill
 
@@ -50,8 +50,10 @@ This separate download should include one file, <strong>boston.coastline.shp</st
 
 ### Additional Islands - bostonoffshore
 
-Islands in a park in the Charles River need to appear, but Boston Common needs to have its
+Islands in a park in the Charles River (pictured below) need to appear, but Boston Common needs to have its
 pond. Downloaded island outlines from OpenStreetMap in XML format, saved as .OSM, and used
 <a href="http://geoconverter.hsr.ch/">http://geoconverter.hsr.ch/</a> and hand-editing to convert to KML polygons.
 
 BostonOffshore.kml is included in this repo.
+
+<img src="https://raw.github.com/mapmeld/boston-greenery/tilemill/boston-offshore.png"/>

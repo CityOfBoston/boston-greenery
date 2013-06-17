@@ -17,7 +17,7 @@ Map {
   line-color:#b8dee6;
   line-width:0.5;
   polygon-opacity:1;
-  polygon-fill:#022;
+  polygon-fill:#dfdcaf;
 }
 
 /* buildings */
@@ -41,8 +41,8 @@ Map {
 }
 
 #boston-line [ highway != "" ][ tunnel != "yes" ][ highway != "path" ][ highway != "footway" ][ highway != "cycleway" ] {
-  line-color: #fff;
-  line-width: 0.5;
+  line-color: #e0ffe0;
+  line-width: 1;
 }
 /* make paths their own style */
 #boston-line [ highway = "path" ], #boston-line [ highway = "footway" ], #boston-line [ highway = "cycleway" ] {

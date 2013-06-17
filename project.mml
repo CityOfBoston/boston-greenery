@@ -58,24 +58,6 @@
     {
       "geometry": "polygon",
       "extent": [
-        -73.5630441,
-        41.238728,
-        -69.9303583,
-        42.983393
-      ],
-      "id": "massachusettswater",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/ndoiron404/Downloads/massachusetts.shapefiles/massachusetts_water.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "massachusettswater"
-    },
-    {
-      "geometry": "polygon",
-      "extent": [
         -71.8609991,
         41.9510002,
         -70.5283185,
@@ -93,6 +75,24 @@
       "srs": "",
       "advanced": {},
       "name": "boston-poly"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -73.5630441,
+        41.238728,
+        -69.9303583,
+        42.983393
+      ],
+      "id": "massachusettswater",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ndoiron404/Downloads/massachusetts.shapefiles/massachusetts_water.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "massachusettswater"
     },
     {
       "geometry": "linestring",

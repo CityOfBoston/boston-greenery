@@ -1,6 +1,6 @@
 # Boston Greenery
 
-Boston Greenery is a map style for TileMill / MapBox which 
+Boston Greenery is a map style for TileMill / MapBox which emphasized green space, footpaths, and bike paths in the city.
 
 <img src="https://raw.github.com/mapmeld/boston-greenery/tilemill/boston-greenery.png"/>
 

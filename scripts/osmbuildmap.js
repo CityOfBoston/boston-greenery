@@ -25,8 +25,9 @@ $(document).ready(function(){
     moving = false;
   });
 
-  // load same customgeo used to generate this map
+  // load building GeoJSONs
   $.getJSON('bostoncommon.geojson', loadBuildings);
+  $.getJSON('bigboston.geojson', loadBuildings);
 });
 
 function loadBuildings(polys){

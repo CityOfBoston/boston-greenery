@@ -30,7 +30,7 @@ Map {
 }
 
 
-#boston-parks [ leisure = "park" ], #boston-parks [ leisure = "recreation_ground" ], #bostonoffshore {
+#boston-parks [ leisure = "park" ], #boston-parks [ leisure = "recreation_ground" ], #boston-parks [ landuse = "recreation_ground" ], #boston-parks [ landuse = "conservation" ], #bostonoffshore {
   line-color:#594;
   line-width:0.5;
   polygon-opacity:1;

@@ -46,7 +46,7 @@ function loadBuildings(polys){
       for(var c=0;c<polys.features[f].geometry.coordinates[0].length;c++){
         avg[0] += polys.features[f].geometry.coordinates[0][c][0];
         avg[1] += polys.features[f].geometry.coordinates[0][c][1];
-        polys.features[f].geometry.coordinates[0][c].push( 100 ); // add a fixed height
+        polys.features[f].geometry.coordinates[0][c].push( polys.features[f].attributes.h * 3 ); // add a fixed height
       }
       polys.features[f].properties = { "wallColor": "rgba(125,125,125,0.95)" };
 

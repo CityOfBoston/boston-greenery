@@ -11,7 +11,7 @@ $(document).ready(function(){
   var terrainAttrib = 'Map data &copy;2013 OpenStreetMap contributors, Tiles by City of Boston';
   var terrainLayer = new L.TileLayer(terrain, {maxZoom: 18, attribution: terrainAttrib});
   map.addLayer(terrainLayer);
-  map.setView(new L.LatLng(42.3548, -71.0660), 16);
+  map.setView(new L.LatLng(42.3548, -71.0660), 17);
   
   // avoid texturing during map moves
   map.on('movestart', function(e){
@@ -46,8 +46,8 @@ function loadBuildings(polys){
       for(var c=0;c<polys.features[f].geometry.coordinates[0].length;c++){
         avg[0] += polys.features[f].geometry.coordinates[0][c][0];
         avg[1] += polys.features[f].geometry.coordinates[0][c][1];
-        if(polys.features[f].attributes && polys.features[f].attributes.h){
-          polys.features[f].geometry.coordinates[0][c].push( polys.features[f].attributes.h * 5 );
+        if(polys.features[f].properties && polys.features[f].properties.h){
+          polys.features[f].geometry.coordinates[0][c].push( polys.features[f].properties.h * 1.5 );
         }
         else{
           polys.features[f].geometry.coordinates[0][c].push( 100 ); // fixed height

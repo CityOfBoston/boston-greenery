@@ -9,7 +9,21 @@ A+pa);sa&&sa.abort();var d={w:b[da],n:b[ca],e:O[da],s:O[ca],z:x},b=R.replace(/\{
 b[f],k=j[B]>>p,!(k>fa)){n=j[H];m=new Ea(n.length);e=0;for(l=n.length-1;e<l;e+=2)d=n[e+1],g=aa(1,xa(0,0.5-Ma(wa(Za+Ka*n[e]/180))/ba/2)),d=(d/360+0.5)*ea<<0,g=g*ea<<0,m[e]=d,m[e+1]=g;m=Da(m);if(!(8>m.length)){l=[];l[H]=m;l[ra]=Ca(m);l[G]=aa(j[G]>>p,fa);l[B]=k;l[S]=a;l[F]=j[F];l[M]=[];for(e=0;3>e;e++)l[F][e]&&(l[M][e]=l[F][e].adjustAlpha(J)+"");c.push(l)}}return c}function m(b,a,d){void 0===d&&(d=[]);var g,c,f,e=b[0]?b:b.features,h,l,k,n,p,r,A=a?1:0,v=a?0:1;if(e){b=0;for(g=e.length;b<g;b++)m(e[b],a,
 d);return d}"Feature"===b.type&&(g=b.geometry,k=b.properties);"Polygon"===g.type&&(h=[g.coordinates]);"MultiPolygon"===g.type&&(h=g.coordinates);if(h){a=k.height;r=e=null;if(k.color||k.wallColor)b=k.color||k.wallColor,e=j.parse(ta[b]||b);k.roofColor&&(b=k.roofColor,r=j.parse(ta[b]||b));b=0;for(g=h.length;b<g;b++){l=h[b][0];n=[];c=p=0;for(f=l.length;c<f;c++)n.push(l[c][A],l[c][v]),p+=a||l[c][2]||0;if(p){f=c=[];var u=H;for(var t=void 0,w=void 0,y=void 0,z=void 0,x=0,s=void 0,C=void 0,s=0,C=n.length-
 3;s<C;s+=2)t=n[s],w=n[s+1],y=n[s+2],z=n[s+3],x+=t*z-y*w;if("CW"!==(0<x/2?"CW":"CCW")){t=[];for(w=n.length-2;0<=w;w-=2)t.push(n[w],n[w+1]);n=t}f[u]=n;c[G]=p/l.length<<0;c[B]=k.minHeight;c[F]=[e,e?e.adjustLightness(0.8):null,r];d.push(c)}}}return d}function D(b,a){b?(ga=m(b,a),W=0,I(x),y={n:90,w:-180,s:-90,e:180,x:0,y:0,z:x},p=q(ga,!0),U()):(ga=null,$())}function I(b){var a,d,g;x=b;ea=ab<<x;b=x;a=W;d=za;b=aa(xa(b,a),d);J=1-aa(xa(0+0.3*((b-a)/(d-a)),0),0.3);Aa=Q.adjustAlpha(J)+"";ha=ua.adjustAlpha(J)+
-"";ia=X.adjustAlpha(J)+"";if(p){b=0;for(a=p.length;b<a;b++){g=p[b];g[M]=[];for(d=0;3>d;d++)g[F][d]&&(g[M][d]=g[F][d].adjustAlpha(J)+"")}}}function U(){clearInterval(Ba);N=0;va.render();Ba=setInterval(function(){N+=0.1;if(1<N){clearInterval(Ba);N=1;for(var b=0,a=p.length;b<a;b++)p[b][S]=0}ja.render();$()},33)}function na(){ja.render();va.render();$()}function $(){K.clearRect(0,0,z,A);if(y&&p&&!(x<W||ka)){var b,a,d,g,c,f,e,h,l,j=s-y.x,n=C-y.y,m=va.getMaxHeight(),r=[la+j,ma+n],P,v,u,t,w,q;p.sort(function(b,
+"";ia=X.adjustAlpha(J)+"";if(p){b=0;for(a=p.length;b<a;b++){g=p[b];g[M]=[];for(d=0;3>d;d++)g[F][d]&&(g[M][d]=g[F][d].adjustAlpha(J)+"")}}}function U(){clearInterval(Ba);N=0;va.render();
+
+Ba=setInterval(function(){
+  N=1.1;
+  if(1<N){
+    clearInterval(Ba);
+    N=1;
+    for(var b=0,a=p.length;b<a;b++)
+      p[b][S]=0
+  }
+  ja.render();
+  $()
+},33)
+}function na(){ja.render();va.render();$()}function $(){K.clearRect(0,0,z,A);if(y&&p&&!(x<W||ka)){var b,a,d,g,c,f,e,h,l,j=s-y.x,n=C-y.y,m=va.getMaxHeight(),r=[la+j,ma+n],P,v,u,t,w,q;p.sort(function(b,
+
 a){return k(a[ra],r)/a[G]-k(b[ra],r)/b[G]});b=0;for(a=p.length;b<a;b++)if(c=p[b],!(c[G]<=m)){v=!1;f=c[H];P=[];d=0;for(g=f.length-1;d<g;d+=2)P[d]=h=f[d]-j,P[d+1]=l=f[d+1]-n,v||(v=0<h&&h<z&&0<l&&l<A);if(v){d=c[S]?c[G]*N:c[G];f=Y/(Y-d);c[B]&&(d=c[S]?c[B]*N:c[B],e=Y/(Y-d));h=[];d=0;for(g=P.length-3;d<g;d+=2)l=P[d],u=P[d+1],v=P[d+2],t=P[d+3],w=oa(l,u,f),q=oa(v,t,f),c[B]&&(u=oa(l,u,e),t=oa(v,t,e),l=u.x,u=u.y,v=t.x,t=t.y),(v-l)*(w.y-u)>(w.x-l)*(t-u)&&(K.fillStyle=l<v&&u<t||l>v&&u>t?c[M][1]||ha:c[M][0]||
 Aa,V([v,t,l,u,w.x,w.y,q.x,q.y])),h[d]=w.x,h[d+1]=w.y;K.fillStyle=c[M][2]||ia;K.strokeStyle=c[M][1]||ha;V(h,!0)}}}}
 

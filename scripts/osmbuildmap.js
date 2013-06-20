@@ -11,7 +11,7 @@ $(document).ready(function(){
   var terrainAttrib = 'Map data &copy;2013 OpenStreetMap contributors, Tiles by City of Boston';
   var terrainLayer = new L.TileLayer(terrain, {maxZoom: 18, attribution: terrainAttrib});
   map.addLayer(terrainLayer);
-  map.setView(new L.LatLng(42.3548, -71.0660), 17);
+  map.setView(new L.LatLng(42.350399, -71.066906), 16);
   
   // avoid texturing during map moves
   map.on('movestart', function(e){
@@ -26,7 +26,7 @@ $(document).ready(function(){
   });
 
   // load building GeoJSONs
-  $.getJSON('bostoncommon.geojson', loadBuildings);
+  //$.getJSON('bostoncommon.geojson', loadBuildings);
   $.getJSON('bigboston.geojson', loadBuildings);
 });
 
@@ -63,6 +63,50 @@ function loadBuildings(polys){
   };
   //textureimg.src = "../images/treeblot.png";
   textureimg.src = "images/steel2.png";
+  
+  plotPoints();
+}
+
+function plotPoints(){
+  // community gardens directly from Socrata API
+  $.getJSON("http://data.cityofboston.gov/resource/cr3i-jj7v.json", function(gardens){
+    for(var i=0;i<gardens.length;i++){
+      if(gardens[i].location == "Address"){
+        // first row = column names: skip
+        continue;
+      }
+      var latlng;
+      if(typeof gardens[i].coordinates != "undefined"){
+        latlng = gardens[i].coordinates.split(",");
+      }
+      else if(typeof gardens[i].map_location != "undefined"){
+        latlng = gardens[i].map_location.latitude + "," + gardens[i].map_location.longitude;
+      }
+      else{
+        // not sure how to map this point
+        console.log(gardens[i]);
+        continue;
+      }
+      new L.Marker( new L.LatLng( latlng[0] * 1.0, latlng[1] * 1.0 ) )
+        .bindPopup( describeGarden( gardens[i] ) )
+        .addTo(map);
+    }
+  });
+}
+
+function describeGarden(garden){
+  var text = '<h3>' + ( garden.site || garden.location || garden.area ) + '</h3>';
+  if( typeof garden.location != "undefined" || typeof garden.area != "undefined" ){
+    text += '<p>A community garden'
+    if( typeof garden.location != "undefined" ){
+      text += ' at ' + garden.location;
+    }
+    if( typeof garden.area != "undefined" ){
+      text += ' in ' + garden.area.replace("Back Bay", "the Back Bay");
+    }
+    text += '</p>';
+  }
+  return text;
 }
 
 function replaceAll(src, oldr, newr){

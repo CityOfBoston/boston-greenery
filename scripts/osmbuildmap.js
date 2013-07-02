@@ -1,4 +1,4 @@
-var map, texture, textureData, texturewidth, buildLayer;
+var map, texturefill, texturefillb, texturefill2, texturefill2b, texturefill3, texturefill3b, buildLayer;
 var moving = false;
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
@@ -30,16 +30,41 @@ $(document).ready(function(){
   $.getJSON('bigboston.geojson', loadBuildings);
 });
 
+function blend(img, color) {
+    // written by @OSMBuildings
+    var canvas = document.createElement('canvas');
+	var context = canvas.getContext('2d');
+
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var xoffset = Math.round(Math.random() * img.width);
+    var yoffset = Math.round(Math.random() * img.height);
+    //console.log(xoffset);
+    //console.log(yoffset);
+    context.drawImage(img, -1 * xoffset, -1 * yoffset, img.width, img.height);
+    context.drawImage(img, -1 * xoffset, img.height - yoffset, img.width, img.height);
+    context.drawImage(img, img.width - xoffset, -1 * yoffset, img.width, img.height);
+    context.drawImage(img, img.width - xoffset, img.height - yoffset, img.width, img.height);
+
+	context.fillStyle = color;
+    context.fillRect(0, 0, img.width, img.height);
+	return context.createPattern(canvas, 'repeat');
+}
+
 function loadBuildings(polys){
   
   var textureimg = new Image();
   textureimg.onload = function(){
-    texture = document.createElement('canvas');
+    var texture = document.createElement('canvas');
     texture.width = textureimg.width;
-    texturewidth = textureimg.width;
     texture.height = textureimg.height;
-    texture.getContext('2d').drawImage(textureimg, 0, 0, textureimg.width, textureimg.height);
-    textureData = texture.getContext('2d').getImageData(0, 0, texture.width, texture.height);
+    var ctx = texture.getContext('2d');
+    texturefill = blend( textureimg, 'rgba(200, 200, 200, 0.3)');
+    texturefillb = blend( textureimg, 'rgba(200, 200, 200, 0.3)');
+    texturefill2 = blend( textureimg, 'rgba(150, 150, 250, 0.3)');
+    texturefill2b = blend( textureimg, 'rgba(150, 150, 250, 0.3)');
+    texturefill3 = blend( textureimg, 'rgba(255, 250, 150, 0.3)');
+    texturefill3b = blend( textureimg, 'rgba(255, 250, 150, 0.3)');
     
     for(var f=0;f<polys.features.length;f++){
       var avg = [0, 0];

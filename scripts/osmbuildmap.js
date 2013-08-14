@@ -9,7 +9,7 @@ $(document).ready(function(){
   map.attributionControl.setPrefix('');
   var terrain = 'http://{s}.tiles.mapbox.com/v3/mapmeld.boston-greenery/{z}/{x}/{y}.png';
   var terrainAttrib = 'Map data &copy;2013 OpenStreetMap contributors, Tiles by City of Boston';
-  var terrainLayer = new L.TileLayer(terrain, {maxZoom: 18, attribution: terrainAttrib});
+  var terrainLayer = L.tileLayer(terrain, {maxZoom: 18, attribution: terrainAttrib, maxNativeZoom: 15, maxZoom: 17 });
   map.addLayer(terrainLayer);
   map.setView(new L.LatLng(42.350399, -71.066906), 16);
   

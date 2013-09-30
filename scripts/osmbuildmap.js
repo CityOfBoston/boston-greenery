@@ -1,4 +1,4 @@
-var map, texturefill, texturefillb, texturefill2, texturefill2b, texturefill3, texturefill3b, buildLayer;
+var map, texture, textureData, texturefill, texturefillb, texturefill2, texturefill2b, texturefill3, texturefill3b, buildLayer;
 var moving = false;
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
@@ -55,16 +55,21 @@ function loadBuildings(polys){
   
   var textureimg = new Image();
   textureimg.onload = function(){
-    var texture = document.createElement('canvas');
+    texture = document.createElement('canvas');
     texture.width = textureimg.width;
     texture.height = textureimg.height;
+    
     var ctx = texture.getContext('2d');
+    ctx.drawImage(textureimg, 0, 0, textureimg.width, textureimg.height);
+    textureData = texture.getContext('2d').getImageData(0, 0, texture.width, texture.height);
+    /*
     texturefill = blend( textureimg, 'rgba(200, 200, 200, 0.3)');
     texturefillb = blend( textureimg, 'rgba(200, 200, 200, 0.3)');
     texturefill2 = blend( textureimg, 'rgba(150, 150, 250, 0.3)');
     texturefill2b = blend( textureimg, 'rgba(150, 150, 250, 0.3)');
     texturefill3 = blend( textureimg, 'rgba(255, 250, 150, 0.3)');
     texturefill3b = blend( textureimg, 'rgba(255, 250, 150, 0.3)');
+    */
     
     for(var f=0;f<polys.features.length;f++){
       var avg = [0, 0];

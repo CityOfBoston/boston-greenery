@@ -70,6 +70,9 @@ function V(b,a){
       var colorOffset = [ intendedColor[0] * 1 - 125, intendedColor[1] * 1 - 125, intendedColor[2] * 1 - 125, intendedColor[3] * 1 ];
       //console.log(colorOffset);
     
+	  var texturewidth = texture.width;
+	  var textureheight = texture.height;
+
       for(var x=xmin; x<xmax; x++){
         for(var y=ymin; y<ymax; y++){
 	      if(ptInPoly([x,y], pts)){
